@@ -16,7 +16,7 @@ export class AppService {
   createOrder({ userId, price }: CreateOrderRequest) {
     this.billingClient.emit(
       'order_created',
-      new OrderCreatedEvent('123', userId, price),
+      new OrderCreatedEvent('223', userId, price),
     );
   }
 }
