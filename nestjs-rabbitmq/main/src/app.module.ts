@@ -3,9 +3,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ProductModule } from './product/product.module';
+import config from './config/keys';
 
 @Module({
-  imports: [MongooseModule.forRoot('mongodb+srv://konan009:UosQr7StMuieV93z@cluster0.atqqi.mongodb.net/nest?retryWrites=true&w=majority'), ProductModule],
+  imports: [MongooseModule.forRoot(config.mongoUri), ProductModule],
   controllers: [AppController],
   providers: [AppService],
 })

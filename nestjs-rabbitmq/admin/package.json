@@ -22,14 +22,14 @@
   "dependencies": {
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
-    "@nestjs/microservices": "^8.4.4",
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/typeorm": "^8.0.3",
     "mysql2": "^2.3.3",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
-    "typeorm": "^0.2.45"
+    "typeorm": "^0.2.45",
+    "mongoose": "=5.11.9"
   },
   "devDependencies": {
     "@nestjs/cli": "^6.13.2",
@@ -51,10 +51,7 @@
     "ts-loader": "^6.2.1",
     "ts-node": "^8.6.0",
     "tsconfig-paths": "^3.9.0",
-    "typescript": "^3.7.4",
-    "amqp-connection-manager": "=3.2.1",
-    "amqplib": "=0.6.0",
-    "@nestjs/microservices": "=7.6.5"
+    "typescript": "^3.7.4"
   },
   "jest": {
     "moduleFileExtensions": [
