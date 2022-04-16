@@ -9,6 +9,7 @@ NestJs Concepts are applied on these are :
 * Validation
 * Microservice
   * Kafka
+  * RabbitMq
 
 Source Links :
 * Traversy Youtube Channel - https://www.youtube.com/watch?v=wqhNoDE6pb4&t=2540s
