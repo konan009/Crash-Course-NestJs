@@ -1,4 +1,4 @@
-import { Controller, Get, HttpServer, Param, Post, HttpService } from '@nestjs/common';
+import { Controller, Get, Param, Post, HttpService  } from '@nestjs/common';
 import { EventPattern } from '@nestjs/microservices';
 import { ProductService } from './product.service';
 @Controller('product')
@@ -16,13 +16,13 @@ export class ProductController {
     @Post(':id/like')
     async like(@Param('id') id: number) {
         const product = await this.productService.findOne(id);
-
+        
         this.httpService.post(`http://localhost:8000/api/products/${id}/like`,{}).subscribe(
             res=> {
                 console.log(res);
             }
         );
-        
+
         return this.productService.update(id, {
             likes: product.likes + 1
         })
