@@ -2,6 +2,7 @@ import { Observable } from 'rxjs';
 
 export interface IGrpcService {
   accumulate(numberArray: INumberArray): Observable<any>;
+  testRpc(numberArray: INumberArray): Observable<any>;
 }
 
 interface INumberArray {

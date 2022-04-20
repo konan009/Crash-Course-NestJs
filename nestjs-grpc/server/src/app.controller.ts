@@ -14,24 +14,17 @@ export class AppController {
   private logger = new Logger('AppController');
 
   constructor(private mathService: MathService) {}
+  
+  @GrpcMethod('AppController', 'TestRpc') 
+  testRpc(numberArray: INumberArray, metadata: any): ISumOfNumberArray { 
+    this.logger.log('TEST RPC - Adding ' + numberArray.data.toString()); 
+    return { sum: this.mathService.accumulate(numberArray.data) }; 
+  } 
 
 
   @GrpcMethod('AppController', 'Accumulate') 
   accumulate(numberArray: INumberArray, metadata: any): ISumOfNumberArray { 
-    this.logger.log('Adding ' + numberArray.data.toString()); 
+    this.logger.log('ACCUMULATE - Adding ' + numberArray.data.toString()); 
     return { sum: this.mathService.accumulate(numberArray.data) }; 
   } 
 }
-
-
-
-
-
-
-
-
-  // @GrpcMethod('AppController', 'Accumulate') 
-  // accumulate(numberArray: INumberArray, metadata: any): ISumOfNumberArray { 
-  //   this.logger.log('Adding ' + numberArray.data.toString()); 
-  //   return { sum: this.mathService.accumulate(numberArray.data) }; 
-  // } 

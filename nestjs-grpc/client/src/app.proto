@@ -4,6 +4,7 @@ package app;
 
 service AppController {
   rpc Accumulate (NumberArray) returns (SumOfNumberArray);
+  rpc TestRpc(NumberArray) returns (SumOfNumberArray);
 }
 
 message NumberArray {

@@ -15,9 +15,16 @@ export class AppController implements OnModuleInit {
     this.grpcService = this.client.getService<IGrpcService>('AppController'); 
   }                                                                           
 
-  @Post('add')
+  @Post('accumulate')
   async accumulate(@Body('data') data: number[])  {
-    this.logger.log('Adding ' + data.toString());
+    this.logger.log('ACCUMULATE : Adding ' + data.toString());
     return this.grpcService.accumulate({ data }); 
+  }
+
+
+  @Post('test_rpc')
+  async test_rpc(@Body('data') data: number[])  {
+    this.logger.log('TEST RPC : Adding ' + data.toString());
+    return this.grpcService.testRpc({ data }); 
   }
 }
