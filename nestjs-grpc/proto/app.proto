@@ -5,11 +5,20 @@ package app;
 service AppController {
   rpc Accumulate (NumberArray) returns (SumOfNumberArray);
   rpc TestRpc(NumberArray) returns (SumOfNumberArray);
+  rpc BidiHello(stream HelloRequest) returns (stream HelloResponse);
 }
 
 message NumberArray {
-  repeated double data = 1;
+    repeated double data = 1;
 }
 message SumOfNumberArray {
-  double sum = 1;
+    double sum = 1;
+}
+
+message HelloRequest {
+    string greeting = 1;
+}
+  
+message HelloResponse {
+    string reply = 1;
 }
